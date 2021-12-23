@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react';
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { Flex, Box, Text, Icon } from '@chakra-ui/react'
@@ -9,7 +9,7 @@ import NoResult from '../assets/noresult.svg'
 import { fetchApi, baseUrl } from '../utils/fetchApi'
 
 
-const search = ({ properties }) => {
+const Search = ({ properties }) => {
     const [searchFilters, setSearchFilters] = useState(false)
     const router = useRouter();
     
@@ -47,7 +47,7 @@ const search = ({ properties }) => {
     )
 }
 
-export default search
+export default Search;
 
 
 export async function getServerSideProps({query}) {
@@ -72,3 +72,6 @@ export async function getServerSideProps({query}) {
     }
   
   }
+
+
+

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Box, Flex, Text, Avatar } from '@chakra-ui/react';
+import { Box, Flex, Text, Spacer} from '@chakra-ui/layout';
+import { Avatar } from '@chakra-ui/avatar';
 import { baseUrl, fetchApi} from '../../utils/fetchApi'
 import { FaBed, FaBath } from 'react-icons/fa';
 import { BsGridFill } from 'react-icons/bs';
@@ -33,16 +34,16 @@ const PropertyDetails = ({ propertyDetails: {price, rentFrequency, rooms, title,
                     <Text lineHeight='2' color='gray.600'>{description}</Text>
                 </Box>
                 <Flex flexWrap='wrap' textTransform='uppercase' justifyContent='space-between'>
-                    <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderBottom='1px' borderColor='gray.100' p='3'>
+                    <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderColor='gray.100' p='3'>
                         <Text>Type</Text>
                         <Text fontWeight='bold' >{type}</Text>
                     </Flex>
-                    <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderBottom='1px' borderColor='gray.100' p='3'>
+                    <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderColor='gray.100' p='3'>
                         <Text>Purpose</Text>
                         <Text fontWeight='bold' >{purpose}</Text>
                     </Flex>
                     {furnishingStatus && (
-                        <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderBottom='1px' borderColor='gray.100' p='3'>
+                        <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderColor='gray.100' p='3'>
                         <Text>Furnishing Status</Text>
                         <Text fontWeight='bold' >{furnishingStatus}</Text>
                     </Flex>
@@ -86,5 +87,4 @@ export async function getServerSideProps({ params: { id }}) {
         }
     }
 }
-
 
