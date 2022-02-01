@@ -17,7 +17,7 @@ const PropertyDetails = ({ propertyDetails: {price, rentFrequency, rooms, title,
                 <Flex paddingTop='2' alignItems='center' justifyContent='space-between'>
                     <Flex alignItems='center'>
                         <Box paddingRight='3' color='green.400'>{isVerified && <GoVerified />}</Box>
-                        <Text fontWeight='bold' fontSize='lg'>AED {millify(price)}{rentFrequency && `/${rentFrequency}`}</Text>
+                        <Text fontWeight='bold' fontSize='lg' color='gray.200'>AED {millify(price)}{rentFrequency && `/${rentFrequency}`}</Text>
                     </Flex>
                     <Box>
                         <Avatar size='sm' src={agency?.logo?.url}></Avatar>
@@ -28,30 +28,30 @@ const PropertyDetails = ({ propertyDetails: {price, rentFrequency, rooms, title,
                     <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft <BsGridFill />
                 </Flex>
                 <Box marginTop='2' >
-                    <Text fontSize='lg' marginBottom='2' fontWeight='bold'>
+                    <Text fontSize='lg' marginBottom='2' color='gray.100' fontWeight='bold'>
                         {title}
                     </Text>
-                    <Text lineHeight='2' color='gray.600'>{description}</Text>
+                    <Text lineHeight='2' color='gray.200'>{description}</Text>
                 </Box>
                 <Flex flexWrap='wrap' textTransform='uppercase' justifyContent='space-between'>
-                    <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderColor='gray.100' p='3'>
+                    <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderColor='gray.300' color='gray.200' p='3'>
                         <Text>Type</Text>
                         <Text fontWeight='bold' >{type}</Text>
                     </Flex>
-                    <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderColor='gray.100' p='3'>
+                    <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderColor='gray.300' color='gray.200' p='3'>
                         <Text>Purpose</Text>
                         <Text fontWeight='bold' >{purpose}</Text>
                     </Flex>
                     {furnishingStatus && (
-                        <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderColor='gray.100' p='3'>
-                        <Text>Furnishing Status</Text>
-                        <Text fontWeight='bold' >{furnishingStatus}</Text>
-                    </Flex>
+                        <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderColor='gray.300' p='3' color='gray.200'>
+                            <Text>Furnishing Status</Text>
+                            <Text fontWeight='bold' >{furnishingStatus}</Text>
+                        </Flex>
                     )}
                 </Flex>
                 <Box>
-                    {amenities.lenght && <Text fontSize='2xl' fontWeight='black' marginTop='5'>Amenities</Text>}
-                    <Flex flexWrap='wrap'>
+                    {amenities.lenght && <Text fontSize='2xl' color='gray.200' fontWeight='black' marginTop='5'>Amenities</Text>}
+                    <Flex flexWrap='wrap' paddingTop='20px'>
                         {amenities.map((item) => (
                             item.amenities.map((amenity) => (
                                 <Text 
@@ -59,7 +59,7 @@ const PropertyDetails = ({ propertyDetails: {price, rentFrequency, rooms, title,
                                     color='blue.400'
                                     fontSize='l'
                                     p='2'
-                                    bg='gray.200'
+                                    bg='#363636'
                                     m='1'
                                     borderRadius='5'
                                     key={amenity.text}
