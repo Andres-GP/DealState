@@ -10,10 +10,10 @@ export const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, link
   <Flex flexWrap='wrap' justifyContent='center' alignItems='center' m='10'>
     <Image src={imageUrl} width="500" height="300" />
     <Box p='5'>
-      <Text color='gray.500' fontSize='sm' fontWeight='medium'>{purpose}</Text>
-      <Text fontSize='3xl' fontWeight='bold'>{title1}<br />{title2}</Text>
-      <Text fontSize='lg' paddingTop='3' paddingBottom='3' color='gray.700'>{desc1}<br />{desc2}</Text>
-      <Button fontSize='xl'>
+      <Text color='gray.400' fontSize='sm' fontWeight='medium'>{purpose}</Text>
+      <Text fontSize='3xl' color='gray.100' fontWeight='bold'>{title1}<br />{title2}</Text>
+      <Text fontSize='lg' paddingTop='3' paddingBottom='3' color='gray.400'>{desc1}<br />{desc2}</Text>
+      <Button fontSize='xl' marginTop='10px'  color='gray.600'>
         <Link href={linkName}><a>{buttonText}</a></Link>
       </Button>
     </Box>
@@ -24,14 +24,14 @@ export default function Home({ propertiesForSale, propertyForRent }) {
   return (
     <Box >
      <Banner 
-      purpose="RENT A HOME"
-      title1="Rental Home for"
-      title2="Everyone"
-      desc1="Explore Apartments, villas, Homes"
-      desc2="and more"
-      buttonText="Explore Renting"
-      linkName="/search?purpose=for-rent"
-      imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
+        purpose="RENT A HOME"
+        title1="Rental Home for"
+        title2="Everyone"
+        desc1="Explore Apartments, villas, Homes"
+        desc2="and more"
+        buttonText="Explore Renting"
+        linkName="/search?purpose=for-rent"
+        imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
      />
      <Flex flexWrap='wrap'>
         {propertyForRent.map((property) => <Property property={property} key={property.id} />)}

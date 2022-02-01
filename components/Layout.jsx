@@ -8,9 +8,10 @@ const Layout = ({children}) => {
     return (
     <>
         <Head>
-            <title>Real State</title>
+            <title>👋 DealState</title>
+            <link rel="shortcut icon" href="../public/favicon.png" />
         </Head>
-        <Box maxWidth='1280px' m='auto'>
+        <Box maxWidth='1280px' m='auto' >
             <header>
                 <Navbar/>
             </header>
